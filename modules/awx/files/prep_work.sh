@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install packages required to setup OpenShift.
+# Install packages required to setup AWX.
 sudo yum -y install epel-release
 sudo yum -y update all
 sudo yum -y install -y wget git gettext ansible docker nodejs npm gcc-c++ bzip2

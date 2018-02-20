@@ -24,7 +24,7 @@ resource "aws_internet_gateway" "awx" {
 resource "aws_subnet" "public-subnet" {
   vpc_id                  = "${aws_vpc.awx.id}"
   cidr_block              = "${var.subnet_cidr}"
-  availability_zone       = "${var.subnetaz}"
+  availability_zone       = "${lookup(var.subnetaz, var.region)}"
   map_public_ip_on_launch = true
   depends_on              = ["aws_internet_gateway.awx"]
 

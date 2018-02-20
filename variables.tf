@@ -5,7 +5,12 @@ variable "region" {
 }
 //  This map defines which AZ to put the 'Public Subnet' in.
 variable "subnetaz" {
-  default = ["ca-central-1a", "ca-central-1b"]
+  type = "map"
+
+  default = {
+    ca-central-1 = "ca-central-1a"
+    ca-central-1 = "ca-central-1b"
+ }
 }
 
 variable "profile" {

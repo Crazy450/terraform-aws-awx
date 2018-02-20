@@ -13,7 +13,7 @@ data "template_file" "prep-work" {
 //  Creating the Master Servers Section
 resource "aws_instance" "awx1" {
   ami                  = "${data.aws_ami.amazonlinux.id}"
-  instance_type        = "${var.ami_type}"
+  instance_type        = "t2.medium"
   subnet_id            = "${aws_subnet.public-subnet.id}"
   iam_instance_profile = "${aws_iam_instance_profile.awx-instance-profile.id}"
   user_data            = "${data.template_file.prep-work.rendered}"
