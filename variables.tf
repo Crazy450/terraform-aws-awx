@@ -33,7 +33,7 @@ variable "dmz_subnet_ids" {
   default = ["192.168.1.0/24", "192168.2.0/24"]
 }
 variable "public_subnet_ids" {
-  default = ["192.168.3.0/24", "192168.4.0/24"]
+  default = "192.168.3.0/24"
 }
 
 //  The public key to use for SSH access.
@@ -47,5 +47,5 @@ variable "ami_type" {
 }
 
 variable "ami_label" {
-  default = "ami-7549cc11"
+  default = "ami-dcad28b8"
 }
