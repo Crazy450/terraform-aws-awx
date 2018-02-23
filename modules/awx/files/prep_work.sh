@@ -34,12 +34,12 @@ git clone https://github.com/ansible/awx.git /tmp/awx_repo
 # Editing the default values for the inventory file 
 # Must Uncomment and replace the $ToBeChanged value with what you would like
 # to be used.
-#sed -i.bak "s/# default_admin_user=admin/default_admin_user=\$ToBeChanged/" ~/awx/installer/inventory
-#sed -i.bak "s/# default_admin_password=password/default_admin_password=\$ToBeChanged/" ~/awx/installer/inventory
-#sed -i.bak "s/awx_secret_key=awxsecret/awx_secret_key=\$ToBeChanged/" ~/awx/installer/inventory
-#sed -i.bak "s/pg_username=awx/pg_username=\$ToBeChanged/" ~/awx/installer/inventory
-#sed -i.bak "s/pg_password=awxpass/pg_password=\$ToBeChanged/" ~/awx/installer/inventory
-#sed -i.bak "s/pg_database=awx/pg_database=\$ToBeChanged/" ~/awx/installer/inventory
+#sed -i.bak "s/# default_admin_user=admin/default_admin_user=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+#sed -i.bak "s/# default_admin_password=password/default_admin_password=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+#sed -i.bak "s/awx_secret_key=awxsecret/awx_secret_key=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+#sed -i.bak "s/pg_username=awx/pg_username=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+#sed -i.bak "s/pg_password=awxpass/pg_password=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+#sed -i.bak "s/pg_database=awx/pg_database=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
 
 # Launching the installation via Playbook
 ansible-playbook -i /tmp/awx_repo/installer/inventory /tmp/awx_repo/installer/install.yml

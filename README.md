@@ -63,6 +63,29 @@ terraform init
 ```
 
 **Step 4:**
+Review the file prep_work.sh and replace / enable the features you would lile to be modified:  
+```
+vim modules/awx/files/prep_work.sh
+```
+
+Here are some examples of lines:  
+```
+# Downloading the awx repo
+git clone https://github.com/ansible/awx.git /tmp/awx_repo
+
+# Editing the default values for the inventory file
+#sed -i.bak "s/# default_admin_user=admin/default_admin_user=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+#sed -i.bak "s/# default_admin_password=password/default_admin_password=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+#sed -i.bak "s/awx_secret_key=awxsecret/awx_secret_key=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+#sed -i.bak "s/pg_username=awx/pg_username=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+#sed -i.bak "s/pg_password=awxpass/pg_password=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+#sed -i.bak "s/pg_database=awx/pg_database=\$ToBeChanged/" /tmp/awx_repo/installer/inventory
+
+# Launching the installation via Playbook
+ansible-playbook -i /tmp/awx_repo/installer/inventory /tmp/awx_repo/installer/install.yml
+```
+
+**Step 5:**
 
  Create your infrastructure using Terraform, using the following command:
  ```
